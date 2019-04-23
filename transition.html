@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>transition</title>
+	<style type="text/css">
+		body {
+			background: #abcdef;
+		}
+		div {
+			width: 800px;
+			height: 800px;
+			margin: auto;
+			transform: rotate(0deg);
+			background: url(bg1.jpg) no-repeat center center,url(02_039.png) no-repeat center center;
+			-webkit-transition-property:transform;
+			-moz-transition-property:transform;
+			-ms-transition-property:transform;
+			-o-transition-property:transform;
+			transition-property:transform;
+		}
+		div:hover {
+			cursor: pointer;/*鼠标经过的时候，变成小手的手势*/
+			transform: rotate(180deg);/*旋转180度*/
+			-webkit-transition-property:transform;
+			-moz-transition-property:transform;
+			-o-transition-property:transform;
+			transition-property:transform;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

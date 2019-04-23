@@ -1,0 +1,184 @@
+header {
+	display: block;
+}
+
+@font-face {
+	font-family: "ATAura";
+	src:url("fonts/ATAura.otf") format("otf");
+	font-weight: normol;/*可以理解为字体的大小设置成默认的大小*/
+	font-style: normol;/*可以理解为把字体的风格设置为默认样式*/
+}
+body {
+	background: #CDBE70;
+	font-family: Cambria,palatino,"palatino Linotype","Palatino LT STD ",Generral,serif;
+	font-size: 15px;/*字体大小*/
+	color: #3a2127;/*字体颜色*/
+	font-weight: 400;/*字体效果加粗4倍*/
+	overflow-y: scroll;/*在y轴上溢出的话显示效果为滚动条*/
+} 
+
+a {
+	text-decoration: none;/*s所有的超链接取消下划线*/
+	color: #333;/*深灰色*/
+}
+
+.clr {         /*清除浮动，溢出隐藏*/
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	clear: both;
+}
+
+.container {
+	width: 100%;
+	height: 100%;/*宽高设置100%，表示和body大小一样大*/
+	text-align: center;/*文字居中*/
+	position: relative;/*位置：相对定位，让container里面的元素位置是对于container来说的*/
+}
+
+.container > header {
+	padding:20px 30px 10px 30px;
+	margin:0px 20px 10px 20px;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);/*整个header加阴影,水平1px;垂直1px，阴影的模糊程度1px;颜色黑色，透明度0.2*/
+}
+
+.container > header > h1 {
+	font-size:35px;/*文字大小35*/
+	line-height: 35px;/*行高35*/
+	font-weight: 400;/*字体效果加粗4倍*/
+	color: rgba(26,89,120,0.9);/*字体颜色透明度*/
+	padding-bottom: 10px;
+	text-shadow: 1px 1px 1px rgb(0,0,0,0.1);
+	font-family: "ATAura";
+}
+
+.codrops-demos {
+	padding: 14px;
+}
+
+.codrops-demos a {
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	text-align: center;/*文字位置左右居中*/
+	line-height: 60px;/*行高60，跟文本的字体一样，可以实现上下居中效果*/
+	background: rgba(104,171,194,0.5);
+	border-radius:50%;/*将方块的设置成圆形，圆角为50%*/
+	font-weight: 800;/*文字加粗*/
+	font-size: 11px;/*文字大小11px*/
+	font-style: italic;  /* normal 默认值。浏览器显示一个标准的字体样式。 
+						    italic 浏览器会显示一个斜体的字体样式。 
+						    oblique 浏览器会显示一个倾斜的字体样式。 
+						    inherit 规定应该从父元素继承字体样式。*/ 
+	color: #fff;
+	margin: 0 3px;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+	box-shadow: 1px 1px 1px rgba(0,0,0,0.05) inset;
+}
+
+.codrops-demos a.current_demo,
+.codrops-demos a.current_demo:hover {   /*设置current划过的时候也是当前样式*/
+	background: rgba(255,255,255,0.9);
+	color: rgba(104,171,194,1);
+	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.codrops-demos a:hover {				/*设置4个超链接划过的时候背景颜色的改变*/
+	background: #4fa2c4;
+}
+
+/*主体部分*/
+
+.cr-container {
+	width: 468px;
+	height: 338px;
+	margin: 0 auto;
+	position: relative;
+	border:20px solid #fff;/*边框 fff：白色*/
+} 
+
+.cr-container input{
+	display: none;
+}
+
+.cr-container label {
+	/*background: #abcdef;*/
+	/*border: 1px solid #fff;*/
+	font-style: italic;/*设置斜体*/
+	width: 117px;/*lable的大小，4个占满container的468px的大小*/
+	height: 30px;
+	cursor: pointer;/*鼠标经过的时候变成手势形状*/
+	color: #fff;/*字体颜色设置为白的*/
+	font-size: 24px;/*设置字体的大小*/
+	text-align: center;/*字体居中显示*/
+	line-height: 32px;/*行高*/
+	float: left;/*这里设置浮动元素，就不用设置display:block了，因为设置为浮动元素之后，就自动转换为浮动元素了*/
+	margin-top: 300px;
+	position: relative;
+	z-index: 100;/*设置label 的层叠指数为最上面*/
+}
+.cr-container label:before { /*使用css3的伪元素在lable前面插入内容：lable:before 需要在content定义内容*/
+	content: "";
+	position: absolute;
+	/*注意：当使用伪类标签：before或：later插入内容时，它是属于内联元素的，需要把它转换成块状元素*/
+	display: block;
+	/*这里不插入内容*/ 
+	/*下面定义一个圆的样式*/
+	left: 50%;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;/*设置圆的左边线靠左50%，但是还不是居中显示在数字的中间，利用margin减去圆的一半的宽度15px实现在数字居中显示*/
+	background: rgba(130,195,217,0.9);
+	margin-left: -15px;
+	z-index: -1;/*设置-1是将圆放在数字的下面*/
+	/* 这里不建议使用border来设置圆的边框，因为会增加圆的尺寸，导致上面设置的内容需要多次更改*/
+	box-shadow: 0 0 0 4px rgba(255,255,255,0.3);
+	/*水平，垂直阴影位置为0不偏移；模糊程度为0 ，阴影的尺寸为4px,和rgba颜色*/
+}
+/*需要设置被选中的lable的背景颜色为白色*/
+.cr-container input:checked + label {
+	color: #68abc2;
+}
+/*被选中的label 的圆也变成白色*/
+.cr-container input:checked + label:before {
+	background: #fff;
+	box-shadow: 0 0 0 4px rgba(104,171,194,0.6);
+}
+
+.cr-container label:after {/*在被选元素的后面插入内容，如果插入的内容为空；content:"";这里设置的是白色的线条*/
+	content: "";
+	width: 1px;/*线条的大小为1个像素*/
+	height: 338px;/*线条的高度为338个像素*/
+	position: absolute; 
+	/*需要靠lable的右边显示，所以需要设置绝对定位*/
+	right: 0;/*靠右边为0像素，靠下边为-8个像素*/
+	bottom: -8px;
+	 /*background: #fff; 线条背景颜色为白色*/
+	background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(255,255,255,0)),color-stop(100%,rgba(255,255,255,0)));/*线条颜色渐变的设置*/
+	background: -moz-linear-gradient(top,rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+	background: -ms-linear-gradient(top,rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+	background: -o-linear-gradient(top,rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+	/*低版本的IE使用渲染的方式实现渐变*/
+	filter:progid:DXImageTransform:Microsoft.gradient(startColorstr="00FFFF",endColorstr="#ffffff",gradientType=0);/*0便是纵向渐变，1表示横向渐变*/
+
+}
+.cr-container label:select-img-4:after {/*设置label最后一条白线的取消显示,它的class为select-img-4，width:0;*/
+	width:0;
+}
+.cr-bgimg {     /*设置背景图片的区域，跟原来的cr-container 的区域大小一样，位置是contain的绝对定位*/
+	width: 468px;
+	height: 338px;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	background-repeat: no-repeat;/*所有的背景图片的平铺属性不平铺*/
+}
+.cr-bgimg > div {/*设计背景区域的四个div每个的宽高度，靠左浮动，超出部分隐藏，位置为相对位置，是为了将图片相对于div进行定位*/
+	width: 117px;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+	position: relative;
+}

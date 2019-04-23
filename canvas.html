@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Canvas</title>
+	<style type="text/css">
+		* {
+			margin:0;        /*设置所有外边距属性。*/
+			padding: 0;      /*设置4 个内边距：*/
+			border: none;   /*边框无*/
+		}	
+		canvas {
+			position:absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			display: block;
+			margin: auto;
+			background: #abcdef;
+		}
+	</style>
+	
+	<script type="text/javascript"> /*插入JavaScript代码*/
+	window.onload = function(){  /*这个函数的意思是文档加载完成后执行相应的JavaScript语句*/
+		var canvas = document.getElementById("canvas"); /*获取到画布的ID*/
+		var context = canvas.getContext('2d');/*对画布进行一个2D绘图环境*/
+		context.moveTo(100,100);/*开始绘制100到200的直线*/
+		context.lineTo(200,200);
+		context.stroke();
+	};
+</script>
+
+</head>
+<body>
+	<canvas id="canvas" width="1024" height="768">推荐使用Chrome浏览器！</canvas>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>CSS3实现图片切换效果</title>
+	<meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.o">
+	<!--设置页面不允许缩放，页面强制适合移动端的尺寸-->
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/style1.css">
+
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1>Sliding Image Panels <span>with CSS3</span></h1>
+			<p class="codrops-demos">
+				<a href ="index.html" class="current_demo">Demo1</a>
+				<a href ="index1.html">Demo2</a>
+				<a href ="index2.html">Demo3</a>
+				<a href ="index3.html">Demo4</a>
+			</p>
+		</header>
+		<section class="cr-container">   <!-- section:<section> 标签定义文档中的节（section、区段）。比如章节、页眉、页脚或文档中的其他部分。 container:翻译：容器-->
+			<input type ="radio" name="radio-set" id="select-img-1" class="cr-selecter-img-1" checked />
+			<label for  ="select-img-1" class="select-img-1">1</label>
+			<!-- 如果需要在lable点击可以实现在单选按钮radio，必须要在lable标签中添加for属性，并且需要填上radio的Id值 -->
+			<input type ="radio" name="radio-set" id="select-img-2" class="cr-selecter-img-2" />
+			<label for  ="select-img-2" class="select-img-2">2</label>
+			<input type ="radio" name="radio-set" id="select-img-3" class="cr-selecter-img-3" />
+			<label for  ="select-img-3" class="select-img-3">3</label>
+			<input type ="radio" name="radio-set" id="select-img-4" class="cr-selecter-img-4" />
+			<label for  ="select-img-4" class="select-img-4">4</label>
+
+			<!--图片部分-->
+			<div class="clr"></div><!--清除浮动-->
+			<div class="cr-bgimg"> <!--4个div是4个图片 -->
+				<div>
+					<span>Slice 1- Image-1</span><!--放第一张图片的第一个1/4图片-->
+					<span>Slice 1- Image-2</span><!--放第二张图片的第一个1/4图片-->
+					<span>Slice 1- Image-3</span><!--放第三张图片的第一个1/4图片-->
+					<span>Slice 1- Image-4</span><!--放第四张图片的第一个1/4图片-->
+				</div>
+
+				<div>
+					<span>Slice 2- Image-1</span><!--放第一张图片的第一个2/4图片-->
+					<span>Slice 2- Image-2</span><!--放第二张图片的第一个2/4图片-->
+					<span>Slice 2- Image-3</span><!--放第三张图片的第一个2/4图片-->
+					<span>Slice 2- Image-4</span><!--放第四张图片的第一个2/4图片-->
+				</div>
+
+				<div>
+					<span>Slice 3- Image-1</span><!--放第一张图片的第一个3/4图片-->
+					<span>Slice 3- Image-2</span><!--放第二张图片的第一个3/4图片-->
+					<span>Slice 3- Image-3</span><!--放第三张图片的第一个3/4图片-->
+					<span>Slice 3- Image-4</span><!--放第四张图片的第一个3/4图片-->
+				</div>
+
+				<div>
+					<span>Slice 4- Image-1</span><!--放第一张图片的第一个4/4图片-->
+					<span>Slice 4- Image-2</span><!--放第二张图片的第一个4/4图片-->
+					<span>Slice 4- Image-3</span><!--放第三张图片的第一个4/4图片-->
+					<span>Slice 4- Image-4</span><!--放第四张图片的第一个4/4图片-->
+				</div>
+			</div>
+			<div class="cr-titles">
+				<h3><span>Serendipity</span><span>what you've been dreaming of</span></h3>
+				<h3><span>Adventure</span><span>Where the fun begins</span></h3>
+				<h3><span>Nature</span><span>Unforgettable eperiences</span></h3>
+				<h3><span>Serenity</span><span>when silence touches nature</span></h3>
+			</div>
+		</section>
+	</div>
+</body>
+</html>

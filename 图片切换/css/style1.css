@@ -1,0 +1,141 @@
+.cr-bgimg div span {    /*设置每个span的大小100%，位置设置为绝对定位，为了设置图片的相对定位哦*/
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: -117px;
+	top: 0;
+	z-index: 2;
+	text-indent: -9999px;/*将span的文字进行隐藏*/
+	background-repeat: no-repeat;/*背景设置不重复*/
+	-webkit-transition: left 0.5s ease-in-out;/*添加动画过渡效果*/
+	-moz-transition: left 0.5s ease-in-out;
+	-ms-transition: left 0.5s ease-in-out;
+	-o-transition: left 0.5s ease-in-out;
+	transition: left 0.5s ease-in-out;
+	
+}
+
+.cr-container input.cr-selecter-img-1:checked ~ .cr-bgimg,/* 设置input选中的时候显示的a.jpg*/
+.cr-bgimg div span:nth-child(1) /*cr-bgimg的div下的第一个span显示的都是第一张图片*/
+ {
+	background: url(../image/a.jpg);	
+}
+.cr-container input.cr-selecter-img-2:checked ~ .cr-bgimg,/* 设置input选中的时候显示的a.jpg*/
+.cr-bgimg div span:nth-child(2)/*cr-bgimg的div下的第二个span显示的都是第二张图片*/
+ {
+	background: url(../image/b.jpg);
+}
+.cr-container input.cr-selecter-img-3:checked ~ .cr-bgimg,/* 设置input选中的时候显示的c.jpg*/
+.cr-bgimg div span:nth-child(3)/*cr-bgimg的div下的第三个span显示的都是第三张图片*/
+ {
+	background: url(../image/c.jpg);
+}
+.cr-container input.cr-selecter-img-4:checked ~ .cr-bgimg,/* 设置input选中的时候显示的d.jpg*/
+.cr-bgimg div span:nth-child(4)/*cr-bgimg的div下的第四个span显示的都是第四张图片*/
+ {
+    background: url(../image/d.jpg);	
+}
+
+.cr-bgimg div:nth-child(1) span{/*这里设置的第一个div下的span 的位置是不需要改变的*/
+	background-position:0 0;
+}
+.cr-bgimg div:nth-child(2) span{
+	background-position:-117px 0;
+}
+.cr-bgimg div:nth-child(3) span{
+	background-position:-234px 0;
+}
+.cr-bgimg div:nth-child(4) span{
+	background-position:-351px 0;
+}
+
+.cr-container input:checked ~ .cr-bgimg span/*被选中的input的后面的所有cr-bgimg span都飘走，需要用animation动画，这个不需要事件触发就能实现*/
+{                                            /*这里定义的是input下的全部span ,下面需要在.cr-container input.cr-selecter-img-1:checked ~ .cr-bgimg div span:
+												添加一个animation:none 的属性*/
+	-webkit-animation:slideOut 0.6s ease-in-out;
+	-moz-animation:slideOut 0.6s ease-in-out;
+	-o-animation:slideOut 0.6s ease-in-out;
+	-ms-animation:slideOut 0.6s ease-in-out;
+	animation:slideOut 0.6s ease-in-out;
+}
+
+@-webkit-keyframes slideOut{		/*上面的animation 的需要一个关键针*/
+	0%{         /*刚开始的时候是从0开始到结尾100%*/
+		left: 0;
+	}
+	100%{
+		left: 117px;
+	}
+}
+@-moz-keyframes slideOut{		/*上面的animation 的需要一个关键针*/
+	0%{
+		left: 0;
+	}
+	100%{
+		left: 117px;
+	}
+}
+@-o-keyframes slideOut{		/*上面的animation 的需要一个关键针*/
+	0%{
+		left: 0;
+	}
+	100%{
+		left: 117px;
+	}
+}
+@-ms-keyframes slideOut{		/*上面的animation 的需要一个关键针*/
+	0%{
+		left: 0;
+	}
+	100%{
+		left: 117px;
+	}
+}
+@keyframes slideOut{		/*上面的animation 的需要一个关键针*/
+	0%{
+		left: 0;
+	}
+	100%{
+		left: 117px;
+	}
+}
+
+
+.cr-container input.cr-selecter-img-1:checked ~ .cr-bgimg div span:nth-child(1),
+.cr-container input.cr-selecter-img-2:checked ~ .cr-bgimg div span:nth-child(2),
+.cr-container input.cr-selecter-img-3:checked ~ .cr-bgimg div span:nth-child(3),
+.cr-container input.cr-selecter-img-4:checked ~ .cr-bgimg div span:nth-child(4)
+{
+	z-index: 10;
+	left: 0;
+	-webkit-animation:none;/*这里设置的是不让这个span飘走*/
+	-moz-animation:none;
+	-ms-animation:none;
+	-o-animation:none;
+	animation:none;
+}
+
+.cr-titles{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	color:#fff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+	z-index: 99;
+	top: 50%;
+}
+
+.cr-titles h3 span:nth-child(1){
+	display: block;
+	font-size: 70px;
+	font-family: "BebasNeue","Arial Narrow",Arial sans-serif;
+	letter-spacing:7px;/*设置两段之间的间距*/
+}
+.cr-titles h3 span:nth-child(2){
+	display: block;
+	font-size: 14px;
+	padding: 10px;
+	background: rgba(104,171,194,0.9);
+	font-family: Cambria,Palatino,"Palatino Linotype","Palation LT STD ";
+	letter-spacing: 0;
+}

@@ -1,0 +1,205 @@
+* {                                 /*这里的 *号 表示设置全局的CSS样式*/
+	font-family: Arial;             /*字体格式*/
+	font-size: 14px;				/*字体大小14*/
+	margin: 0;                      /*外边距*/
+	padding: 0;                     /*内边距*/
+	border: none;                   /*边框*/
+}
+
+a {
+	text-decoration: none;          /*去掉超链接的下划线*/
+}
+
+ul {
+	list-style: none;               /*去掉列表项前面的点*/
+}
+
+header {                            /*导航栏的黑条*/
+	height: 80px;
+	background: #000;
+}
+
+header > .container{		        /*header里面的container（容器）( > 添加这个大于号的作用是防止指向错误) */
+	width: 1200px;		            /*宽度*/
+	margin: 0 auto;                 /*居中*/
+}
+
+header > .container > a {           /*这是是编辑导航标签的LOGO超链接*/
+	display: block;                 /*将超链接变成块件元素*/
+	float: left;                    /*块件元素会独自占一行，所以要添加浮动属性，靠左*/
+	margin: 5px 25px;               /*LOGO距离左边5像素，距离上边25像素*/
+}
+
+header > .container > nav {         /*控制导航栏的nav*/
+	float: right;					/*浮动靠右*/
+}
+
+header > .container > nav > a {     /*控制导航的nav的超链接Home、Course、Actual、Plan、FAQ、Note*/
+	font-size: 24px;                /*字体大小为24像素*/
+	line-height: 73px;				/*因为字体的大小是73像素，如果想要将字体居中，可以将行的大小也可以设置为73像素*/
+	display: block;					/*将它装换为块状元素*/
+	float: left;  				 	/*转换为块状元素之后是垂直显示的，所以需要将它们进行浮动显示，并成一排*/
+	width: 110px; 					/*将字体宽度设置为110像素*/
+	height: 73px; 					/*将字体高度设置为73像素*/
+	text-align: center;				/*将字体进行宽度居中*/
+	color: #fff;					/*将字体设置为白色*/
+}
+/*设置这些块状元素的背景颜色*/
+header > .container > nav > a.Home { background: #433b90; }
+header > .container > nav > a.Course { background: #017fcb; }
+header > .container > nav > a.Actual { background: #78b917; }
+header > .container > nav > a.Plan { background: #feb800; }
+header > .container > nav > a.FAQ { background: #f27c01; }
+header > .container > nav > a.Notes { background: #d40112; }
+
+/*设置鼠标经过时候的属性变换*/
+header > .container > nav > a:hover,
+header > .container > nav > a.active {
+	padding-bottom: 7px;
+}
+
+.banner {   /*定义轮转图区域 */
+	background: #eaeaea;   /*背景颜色为淡灰绿色#eaeaea*/
+}
+
+.banner > ul {
+	position: relative;  /*设置布局方式为相对位置*/
+	width: 1490px;      /*轮播区域的宽度为1490像素*/
+	height: 538px;		/*轮播区域的高度为300像素*/
+	margin: 0 auto;
+	padding-top: 10px;  /*内边距将头部的位置顶下来/
+	/*overflow: hidden;   将超出轮播图区域的图片进行（hidden）隐藏*/
+}
+
+.banner > ul > li {
+	position: absolute;   /*（position）位置：绝对的（absolute）*/
+	width: 610px;     /*设置底层图片的宽度*/
+	height: 300px;    /*设置底层图片的高度*/
+    overflow: hidden; /*将超出部分的进行（hidden）隐藏*/
+}
+
+.banner > ul > li.active {
+	z-index: 2;            /*将中间的图设置z-index的属性为2级，显示在后面两张图的前面*/
+	top: 37px;            /*轮播图与轮播区域的顶部距离37像素*/
+	right: 0;
+	left: 0;             /*左边右边都为零*/
+	width: 960px;		
+	height: 460px;
+	margin: auto;		/*设置auto拔河效应*/
+	border: 1px solid #fff;/*soild 阴影，和1像素的边框*/
+}
+
+.banner > ul >li.left {
+	z-index: 1;			/*设置底边的左边的图片为第一层*/
+	top: 0;				/*上边和下边都是0，可以实现上下居中*/
+	bottom: 0;
+	left: 0;			/*居左*/
+	margin: auto;		/*实现拔河效应*/
+}
+
+.banner > ul >li.right {
+	z-index: 1;			/*设置底边的左边的图片为第一层*/
+	top: 0;				/*上边和下边都是0，可以实现上下居中*/
+	right: 0;			/*居右*/
+	bottom: 0;			
+	margin: auto;		/*实现拔河效应*/
+}
+
+.banner > ul > li > img {
+	position: absolute; /*为了让位置可以自由挪动，给一个生成绝对定位的元素*/
+	left: -30%;			/*左位移*/
+	height: 100%;		/*高度*/
+
+}
+
+.main {    				/*内容部分*/
+	width: 1200px;
+	height: 473px;
+	margin: 34px auto 0; /*上边设置34px的*/
+}
+
+.main h1 {
+	font-size: 30px;
+	font-weight: lighter;
+	margin-bottom: 23px;
+}
+
+.main h1 {
+	font-size: 23px;
+	flood-color: #7c7c7c；
+}
+
+.main > aside {
+	float: left;
+	width: 450px;
+}
+
+.main > aside > dl {  /*要写绝对定位，那么它的父亲必须需要相对定位*/
+	position: relative;  /*相对定位*/
+	display: block;/*显示为块状元素*/
+	height: 74px;  /*高度为74像素*/
+	margin-bottom: 17px;/*下边距17像素*/
+}
+
+.main > aside > dl > dt {
+	position: absolute; /*绝对定位，控制标题的位置*/
+	top: -1px;
+	left: 92px;
+	font-size: 16x;
+	font-weight: bold;/*文字加粗*/
+	line-height: 16px; /*文字的高度刚好等于行的高度*/
+	text-decoration: underline;/*添加标题的文字下划线*/
+}
+
+.main > aside > dl > dd:first-of-type { /*first-of-type选择属于其父元素的首个元素*/
+	position: absolute;
+	left: 0;
+}
+
+.main > aside > dl > dd:last-of-type {/*last-of-type选择属于其父元素的最后一个元素*/
+	position: absolute;    /*绝对位置*/
+	top:20px;        
+	left: 90px;
+}
+
+.main > article {
+	float: right;
+	width: 720px;
+	overflow: hidden;    /*超出位置设置隐藏*/
+}
+
+.main > article > p,
+.main > article > img {
+	margin-bottom: 20px;  /*控制下边距为20像素*/
+}
+
+footer {
+	background: #000;  /*设置footer显示为黑色背景*/
+}
+
+footer > .container {
+	width: 1200px;    /*宽度1200像素*/
+	height: 64px;	  /*高度64像素*/
+	margin: 0 auto;   /*居中显示*/
+}
+
+footer > .container > p {
+	line-height: 64px;
+	float: left; /*左浮动*/
+	color: #fff; /*颜色设置为白色*/
+}
+
+footer > .container > span {
+	float: right;     /*右浮动*/
+	margin: 14px 40px;  /*位置*/
+}
+
+footer > .container > span > img {
+	margin-left: 4px;  /*每个图片间隔4个像素*/
+	opacity: .7;       /*设置透明度为0.7*/
+}
+
+footer > .container > span > img:hover { /*当鼠标经过图片的时候，使用hover*/
+	opacity: 1;      /*当鼠标经过的时候透明度显示为1*/
+	cursor: pointer;  /*鼠标经过的时候，鼠标箭头转换为手势点击*/
+}
