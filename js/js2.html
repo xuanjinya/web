@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>javaScript基础2</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//number表示的是整数和浮点数
+		var distance = 12.6987;
+		//NaN:即非整数，是一个特殊的数值哦
+		var age=18;
+		console.log(age-"abc");
+		//这时候打印的就是NaN，任何涉及NaN的操作返回的数值也是NaN，NaN不等于本身和任何数
+		console.log(typeof(age-"abc"));//这时候打印的也是number的类型，因为NaN是一种特殊的number类型
+		//isNaN()是判断是否为非数值哦,返回的类型是boolean值，即true或false
+		console.log(isNaN(age));//由于age是一个数值，所以返回的值为false
+		
+	</script>
+</body>
+</html>
