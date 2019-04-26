@@ -6,12 +6,21 @@
 </head>
 <body>
 	<script type="text/javascript">
+		//join()函数就是将数组转换成为字符串，在join()的括号里面可以加上各个元素的连接符号
 		var nums=[2,3,4];
 		var str=nums.join();
 		console.log(str);
 		var words=["border","left","color"];
 		var worders=words.join("-");
 		console.log(worders);
+		//reverse()这个函数数组里面的元素进行颠倒位置
+		var strs=["a","b","c","d","e","f"];
+		var newstr=strs.reverse();
+		var haha=newstr.join();
+		console.log(haha);
+		//sort()函数是将数组的元素转换成字符串，它然后进行比较，然后返回的是一个比较好的数组 
+		var arr=[9,88,13,44,63];
+		console.log(arr.sort());//可以看到排序结果为[13, 44, 63, 88, 9]
 	</script>
 </body>
 </html>
