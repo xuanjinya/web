@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>classname</title>
+	<style type="text/css">
+		.current {
+			background: #ccc;
+			color:#f00;
+		}
+		.on {
+			border-bottom: 1px solid #0f0;
+		}
+	</style>
+</head>
+<body>
+	<ul id="list" class="list">
+		<li>前端开发</li>
+		<li>服务前端开发</li>
+		<li class="on">UI设计</li>
+	</ul>
+	<script type="text/javascript">
+		var lis=document.getElementById('list').getElementsByTagName('li');
+		for(var i=0,len=lis.length;i<len;i++){
+			console.log(lis[i].innerHTML);
+			lis[i].innerHTML+='程序';
+			//给索引为2的元素添加一个class 
+			lis[1].className="current";
+			//如果原来的元素已经有了一个class  class="on" 执行className就会把之前的class替换掉
+			lis[2].className="current";
+		}
+		//打印ID为list的class为什么？
+		console.log(document.getElementById("list").className);
+	</script>
+</body>
+</html>

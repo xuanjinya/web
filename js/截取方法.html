@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>截取slice()</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var str="Hello World";
+		console.log(str.slice(7,10));
+		console.log(str.slic(1));
+		console.log(str.slice(-7,-2));
+		//注意:最后一个参数不写的时候，是截取到末尾，参数为负数的时候，其值为字符串长度+该负数，填入两个参数的时候，截取的索引不包括最后一个数的本身
+
+		//substring()这个函数也能实现截取的功能，但是也有区别：当参数为负数的时候，直接将负数转化为0  当传入的数字，第一个数字比第二个数字大的时候，自动将小的那个数字设置为初始位置
+		//substr(star,len),star表示的是截取的起始位置，len表示的要截取的长度，不写的话，直接截取到最后末尾
+	</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>innerHTML</title>
+</head>
+<body>
+	<ul id="list">
+		<li>前端开发</li>
+		<li>服务端开发</li>
+		<li><i>UI设计</i></li>
+		<li>javascriptr</li>
+	</ul>
+	<script type="text/javascript">
+		//获取和设置标签之间的文本和HTML内容 <i>UI设计</i>
+		var lis=document.getElementById("list").getElementsByTagName("li");
+		for(var i=0,len=lis.length;i<len;i++){
+			lis[i].innerHTML=lis[i].innerHTML+'程序';
+			console.log(lis[i].innerHTML);
+		}
+	</script>
+</body>
+</html>

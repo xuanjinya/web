@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>data</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//new Data();返回值;不传参数的情况下，返回的是当前的时间对象
+		var today = new Date();
+		console.log(today);
+		var weeks=["日","一","二","三","四","五","六"];
+		var year=today.getFullYear();
+		var month=today.getMonth()+1;
+		var date=today.getDate();
+		var week=today.getDay();
+		var hours=today.getHours();
+		var minutes=today.getMinutes();
+		var seconds=today.getSeconds();
+		var time=year+'年'+month+'月'+date+'日'+hours+'时'+minutes+'分'+seconds+'秒 星期'+weeks[week];
+		console.log("现在是："+time);
+
+	</script>
+</body>
+</html>

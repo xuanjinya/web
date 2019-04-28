@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>camelback</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//将传入的字符串转变成驼峰形式
+		function camelback(str){
+			//流程：1.将字符串转变为数组  2.遍历数组  3.改变除第一个单词之外的所有单词的首字母 4.拼接字符串返回
+			//通过“-”号拆分
+			 var arr = str.split("-");
+			 var newStr=arr[0];
+			 console.log(arr);//["border","left","color"]
+			 for(var i=1,len=arr.length;i<len;i++){
+			 	var word=arr[i];
+			 	console.log(word);//left color
+			 	//将这个单词的首个字母charAt(0) 转换为大写toUpperCase()
+			 	newStr+=word.charAt(0).toUpperCase()+word.substr(1);//这里返回的是单个字符大写，还没有把原来的单词转换，所以还需要进行加上原来单词除首字母之外的其他单词word.substr(1)
+			 	console.log(newStr);//Left Color
+			 	//将所有的单词链接起来“ var newStr=arr[0]; newStr+= ”，这里直接每次循环都加起来
+			 }
+			 return newStr;
+		}
+		var camelFormat=camelback("border-left-color");
+	</script>
+</body>
+</html>

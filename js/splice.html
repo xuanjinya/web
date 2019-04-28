@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>splice方法</title>
+</head>
+<body>
+	<script type="text/javascript">	
+	//利用splice()删除数组中的元素，arrayObject.splice(index,count),删除从index开始的零个或多个元素，返回值，删除的元素的数组,count是删除的项目的数量
+	var arr=["a","b","c","d","e","f"];
+	var delarr=arr.splice(2,3);//删除arr数组索引为2开始往下的3个元素，删除"c","d","e"
+	console.log(delarr);
+
+	//利用splice()向数组指定位置插入元素，arrayObject.splice(index,0,item1,...,itemX),参数：Index 起始位置，0是要删除的项数，item1,...,itemx表示要插入的项 ，返回的是一个数组
+	var insert=["a","b","c","d","e"];
+	var newInsert=insert.splice(2,0,"m","n");
+	console.log(insert);
+	console.log(newInsert);
+	//利用splice()方法替换数组的元素，arrayObject.splice(index,count,item1,...,itemX),在指定位置插入值，且删除任意数量的项，参数： Index；起始位置；count：要删除的项数，item1,itemX:要插入的项，返回值：从原始数组中删除的项（如果没有删除数组中的元素，返回的是一个空数组）
+	var replaceArr=["a","b","c","d","e"];
+	var newReplaceArr=replaceArr.splice(1,2,"w");
+	console.log(replaceArr);
+	console.log(newReplaceArr);
+	</script>
+</body>
+</html>

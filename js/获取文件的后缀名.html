@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取文件的后缀名</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var url="index.txt";
+		function getFileFormat(url){
+			//获取 "." 在url的位置 最后出现的位置，或则从后往前检测
+			var pos = url.lastIndexOf(".");
+			console.log(pos);
+			return url.substr(pos+1);
+		}
+		var formatName=getFileFormat(url);
+		var picFormat=getFileFormat("88747849.jpg");
+		console.log(formatName);
+		console.log(picFormat);
+	</script>
+</body>
+</html>

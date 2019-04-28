@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取元素的属性</title>
+</head>
+<body>
+	<p id="text" align="center" data-type="title">文本</p>
+	<input type="text" name="user" value="uesr" id="user" class="user" validate="true">
+	<script type="text/javascript">
+		var p=document.getElementById("text");
+		console.log(p.id);
+		console.log(p.align);//但是不能获取class 属性也就是只能获取标签的标准属性
+		//通过getAttribute()可以获取其他除标准属性以外的属性
+		console.log(p.getAttribute("data-type"));
+
+		var user=document.getElementById("user");
+		console.log(user.getAttribute("class"));
+		console.log(user.getAttribute("validate"));
+
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取元素</title>
+</head>
+<body>
+	<div id="box" class="box">
+		元素1
+	</div>
+	<ul id="list1">
+		<li>前端开发</li>
+		<li>服务器端开发</li>
+		<li>UI设计</li>
+	</ul>
+	<ol>
+		<li>javaScriipt</li>
+		<li>javaScripe框架</li>
+	</ol>
+	<script type="text/javascript">
+		//获取元素的方法 document.getElementById()    document.getElementsByTagName()
+		//动态给这些元素添加样式 语法：ele.style.styleName=styleValue   设置ele元素的CSS样式
+		//1.获取ID为box的这个元素
+		var box=document.getElementById("box");
+		//2.设置ID为“box”这个元素的样式文字颜色为红色
+		box.style.color='#f00';
+		box.style.fontWeight='bold';//注意font-weight 要写成驼峰形式fontWeight
+		//获取页面中的所有li元素
+		var lis=document.getElementsByTagName("li");
+		//取出list1标签下的li 
+		var lis1=document.getElementById("list1").getElementsByTagName("li");
+		var lis2=document.getElementById("list1").getElementsByTagName("li");
+		//遍历每一个li
+		for(var i=0,len=lis2.length;i<len;i++){
+			console.log(lis2[i]);
+			lis2[i].style.color='#00f';//设置为蓝色
+			if(i==0){
+				lis2[i].style.backgroundColor='#ccc';
+			}else if(i==1){
+				lis2[i].style.backgroundColor='#ff0';
+			}else if(i==2){
+				lis2[i].style.backgroundColor='#0f0';
+			}else{
+				lis2[i].style.backgroundColor='#666';
+			}
+		}
+	</script>
+</body>
+</html>

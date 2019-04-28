@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>indexOf</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//arrayObject.indexOf(searchvalue,startindex),功能:从数组的开头开始向后查找，参数：searchvalue必须填写，starIndex，可选，起点位置的索引，返回值，number，如果没有查找到，返回的数字为-1
+		var arr=[1,7,5,6,7,8,4,5];
+		//检测一下7在这个数组出现的位置
+		var pos=arr.indexOf(7);//注意检测的元素的类型必须完全一样，不能写成var pos=arr.indexOf("7");
+		console.log(pos);//返回1
+		//检测数字5在数组索引位置为4之后的出现的5的位置
+		var newPos=arr.indexOf(5,4);
+		console.log(newPos);//返回7
+		//lastIndexOf()这个函数查找是从末尾开始查找，用法和indexOf()函数差不多 
+
+		//练习;自己封装一个indexOf()函数
+		function ArrayIndexOf(arr,value){
+			for(var i=0;i<arr.length;i++){
+				if(value===arr[i]){
+					return i;//返回的是数组的第几个元素，不是返回arr[i]数组值
+				}
+			}
+			return -1;//如果没有找到就返回-1
+		}
+
+	</script>
+</body>
+</html>

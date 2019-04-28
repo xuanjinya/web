@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>截取元素</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//slice()从已有的数组中返回指定的元素
+		//arrayObject.slice(start,end)
+		var colors=["red","green","blue","yellow","orange"];
+		var newColors=colors.slice(1,3);
+		console.log(newColors);
+		//slice(start,end)中的start可以为负数，假如是-2，从数组的长度减去2开始算起。
+		var newColors2=colors.slice(-2,5);
+		console.log(newColors2);
+		//输出结果为blue,yellow
+		//完成以下代码段，实现b数组对a数组的拷贝，方法越多越好
+		var a=[1,"yes",3];
+		var b;
+		//1.数组遍历，push方法可向数组的末尾添加一个或多个元素,并返回新的长度。
+		b=new Array();
+		for(var i=0;i<a.length;i++){
+			b.push(a[i]);
+		}
+		console.log(b);
+		//2.concat();用于连接两个数组的元素
+		b=[].concat(a);
+		console.log(b);
+		//3.slice()截取数组，可以从0开始截取到数组的最后
+		b=a.slice(0);
+	</script>
+	
+</body>
+</html>
